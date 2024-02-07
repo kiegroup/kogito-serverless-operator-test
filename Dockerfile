@@ -16,7 +16,7 @@
 # under the License.
 
 # Build the manager binary
-FROM docker.io/library/golang:1.21.6 as builder
+FROM docker.io/library/golang:1.20.14 as builder
 
 ARG SOURCE_DATE_EPOCH
 

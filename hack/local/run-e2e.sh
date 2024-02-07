@@ -30,4 +30,5 @@ if ! make docker-build IMG="${OPERATOR_IMAGE_NAME}"; then
   echo "Failure: Failed to build image, exiting " >&2
   exit 1
 fi
+make deploy IMG=${OPERATOR_IMAGE_NAME}
 make test-e2e

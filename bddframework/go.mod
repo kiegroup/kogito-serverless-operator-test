@@ -1,8 +1,6 @@
 module github.com/apache/incubator-kie-kogito-serverless-operator/bddframework
 
-go 1.21
-
-toolchain go1.21.6
+go 1.20
 
 // Internal dependencies
 replace github.com/apache/incubator-kie-kogito-serverless-operator v0.0.0 => ../

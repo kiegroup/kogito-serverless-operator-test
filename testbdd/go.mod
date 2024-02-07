@@ -1,8 +1,6 @@
 module github.com/apache/incubator-kie-kogito-serverless-operator/testbdd
 
-go 1.21
-
-toolchain go1.21.6
+go 1.20
 
 replace (
 	github.com/apache/incubator-kie-kogito-serverless-operator => ../
