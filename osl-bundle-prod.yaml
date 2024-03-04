@@ -41,7 +41,26 @@ labels:
     value: "true"
   - name: com.redhat.openshift.versions
     value: v4.10
-
+  - name: features.operators.openshift.io/disconnected
+    value: "false"
+  - name: features.operators.openshift.io/fips-compliant
+    value: "false"
+  - name: features.operators.openshift.io/proxy-aware
+    value: "false"
+  - name: features.operators.openshift.io/cnf
+    value: "false"
+  - name: features.operators.openshift.io/cni
+    value: "false"
+  - name: features.operators.openshift.io/csi
+    value: "false"
+  - name: features.operators.openshift.io/tls-profiles
+    value: "false"
+  - name: features.operators.openshift.io/token-auth-aws
+    value: "false"
+  - name: features.operators.openshift.io/token-auth-azure
+    value: "false"
+  - name: features.operators.openshift.io/token-auth-gcp
+    value: "false"
 modules:
   repositories:
     - path: modules

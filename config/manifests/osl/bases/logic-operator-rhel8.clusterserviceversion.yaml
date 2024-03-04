@@ -5,14 +5,18 @@ metadata:
     alm-examples: '[]'
     capabilities: Basic Install
     categories: Application Runtime
-    description: OpenShift Serverless Logic Kubernetes Operator for deploying workflow
-      applications based on the CNCF Serverless Workflow specification
+    certified: "false"
+    description: OpenShift Serverless Logic Operator for deploying workflow applications
+      based on the CNCF Serverless Workflow specification
+    operatorframework.io/suggested-namespace: openshift-serverless-logic
     operators.openshift.io/valid-subscription: '["OpenShift Container Platform", "OpenShift
       Platform Plus"]'
+    operators.operatorframework.io/builder: operator-sdk-v1.25.0
     operators.operatorframework.io/internal-objects: '["sonataflowbuilds.sonataflow.org"]'
-    repository: https://github.com/apache/incubator-kie-kogito-serverless-operator
+    operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+    repository: https://github.com/kiegroup/kogito-serverless-operator/
     support: Red Hat
-  name: logic-operator-rhel8.v0.0.0
+  name: logic-operator-rhel8.v1.32.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -191,11 +195,14 @@ spec:
       version: v1alpha08
   description: |-
     OpenShift Serverless Logic Kubernetes Operator for deploying workflow applications
-    based on the [CNCF Serverless Workflow specification](https://serverlessworkflow.io/):
+    based on the [CNCF Serverless Workflow specification](https://serverlessworkflow.io/) to deploy workflow applications
+    [suited for the your development cycle](https://openshift-knative.github.io/docs/docs/latest/serverless-logic/cloud/operator/developing-workflows.html).
 
-    * Deploy workflow applications using the [dev profile](https://sonataflow.org/serverlessworkflow/latest/cloud/operator/developing-workflows.html), suited for the your development cycle
-    * Build workflow applications based on the platform you're currently working on.
-  displayName: SonataFlow Operator
+    Please follow our [documentation for more information about the OpenShift Serverless Logic Operator Tech Preview](https://openshift-knative.github.io/docs/docs/latest/serverless-logic/about.html).
+  displayName: OpenShift Serverless Logic Operator
+  icon:
+  - base64data: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCIgdmlld0JveD0iMCAwIDM4IDM4Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDojZmZmO30uYntmaWxsOiNlMDA7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJhIiBkPSJNMjgsMUgxMGE5LDksMCwwLDAtOSw5VjI4YTksOSwwLDAsMCw5LDlIMjhhOSw5LDAsMCwwLDktOVYxMGE5LDksMCwwLDAtOS05WiIvPjxwYXRoIGQ9Ik0yOCwyLjI1QTcuNzU4Nyw3Ljc1ODcsMCwwLDEsMzUuNzUsMTBWMjhBNy43NTg3LDcuNzU4NywwLDAsMSwyOCwzNS43NUgxMEE3Ljc1ODcsNy43NTg3LDAsMCwxLDIuMjUsMjhWMTBBNy43NTg3LDcuNzU4NywwLDAsMSwxMCwyLjI1SDI4TTI4LDFIMTBhOSw5LDAsMCwwLTksOVYyOGE5LDksMCwwLDAsOSw5SDI4YTksOSwwLDAsMCw5LTlWMTBhOSw5LDAsMCwwLTktOVoiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTE0LDIzLjQ3NjZIMTBhLjYyNTMuNjI1MywwLDAsMS0uNjI1LS42MjV2LTRhLjYyNTIuNjI1MiwwLDAsMSwuNjI1LS42MjVoNGEuNjI1Mi42MjUyLDAsMCwxLC42MjUuNjI1djRBLjYyNTMuNjI1MywwLDAsMSwxNCwyMy40NzY2Wm0tMy4zNzUtMS4yNWgyLjc1di0yLjc1aC0yLjc1WiIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMjEsMjMuNDc2NkgxN2EuNjI1My42MjUzLDAsMCwxLS42MjUtLjYyNXYtNGEuNjI1Mi42MjUyLDAsMCwxLC42MjUtLjYyNWg0YS42MjUyLjYyNTIsMCwwLDEsLjYyNS42MjV2NEEuNjI1My42MjUzLDAsMCwxLDIxLDIzLjQ3NjZabS0zLjM3NS0xLjI1aDIuNzV2LTIuNzVoLTIuNzVaIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNy41LDE2LjQ3NjZoLTRhLjYyNTMuNjI1MywwLDAsMS0uNjI1LS42MjV2LTRhLjYyNTIuNjI1MiwwLDAsMSwuNjI1LS42MjVoNGEuNjI1Mi42MjUyLDAsMCwxLC42MjUuNjI1djRBLjYyNTMuNjI1MywwLDAsMSwxNy41LDE2LjQ3NjZabS0zLjM3NS0xLjI1aDIuNzV2LTIuNzVoLTIuNzVaIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0yNC41LDE2LjQ3NjZoLTRhLjYyNTMuNjI1MywwLDAsMS0uNjI1LS42MjV2LTRhLjYyNTIuNjI1MiwwLDAsMSwuNjI1LS42MjVoNGEuNjI1Mi42MjUyLDAsMCwxLC42MjUuNjI1djRBLjYyNTMuNjI1MywwLDAsMSwyNC41LDE2LjQ3NjZabS0zLjM3NS0xLjI1aDIuNzV2LTIuNzVoLTIuNzVaIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0yOCwyMy40NzY2SDI0YS42MjUzLjYyNTMsMCwwLDEtLjYyNS0uNjI1di00YS42MjUyLjYyNTIsMCwwLDEsLjYyNS0uNjI1aDRhLjYyNTIuNjI1MiwwLDAsMSwuNjI1LjYyNXY0QS42MjUzLjYyNTMsMCwwLDEsMjgsMjMuNDc2NlptLTMuMzc1LTEuMjVoMi43NXYtMi43NWgtMi43NVoiLz48cGF0aCBkPSJNMjksMjYuNDc2Nkg5YS42MjUuNjI1LDAsMCwxLDAtMS4yNUgyOWEuNjI1LjYyNSwwLDAsMSwwLDEuMjVaIi8+PC9zdmc+
+    mediatype: image/svg+xml
   install:
     spec:
       deployments: null
@@ -214,9 +221,12 @@ spec:
   - cncf
   - serverless
   - serverlessworkflow
+  - workflows
   links:
-  - name: Product Page
-    url: https://sonataflow.org/serverlessworkflow/latest/index.html
+  - name: Documentation
+    url: https://openshift-knative.github.io/docs/docs/latest/serverless-logic/about.html
+  - name: Source Repository
+    url: https://github.com/kiegroup/kogito-serverless-operator/
   maintainers:
   - email: bsig-cloud@redhat.com
     name: Red Hat
