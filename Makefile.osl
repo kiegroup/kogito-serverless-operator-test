@@ -3,8 +3,8 @@
 # To re-generate a bundle for another specific version without changing the standard setup, you can:
 # - use the VERSION as arg of the bundle target (e.g make bundle VERSION=0.0.2)
 # - use environment variables to overwrite this value (e.g export VERSION=0.0.2)
-VERSION ?= 1.33.0
-IMAGE_DIGEST ?= sha256:33653cf4c48121a7a0d1e109c3fe93b8050f9deb80b6bb00425b62c77917a9ad
+VERSION ?= 1.32.0
+IMAGE_DIGEST ?= sha256:cdc81719192f2dfdf8a1d366cda54347462acba3425f48a61b29631f191284fa
 
 # CHANNELS define the bundle channels used in the bundle.
 # Add a new line here if you would like to change its default config. (E.g CHANNELS = "candidate,fast,stable")
@@ -49,7 +49,7 @@ USE_IMAGE_DIGESTS ?= true
 IMG_TAG_SEP = :
 IMG_VERSION = $(VERSION)
 ifeq ($(USE_IMAGE_DIGESTS), true)
-	# BUNDLE_GEN_FLAGS += --use-image-digests
+	#BUNDLE_GEN_FLAGS += --use-image-digests
 	IMG_TAG_SEP = @
 	IMG_VERSION = $(IMAGE_DIGEST)
 endif

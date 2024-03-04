@@ -130,7 +130,7 @@ metadata:
     operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
     repository: https://github.com/kiegroup/kogito-serverless-operator/
     support: Red Hat
-  name: logic-operator-rhel8.v1.33.0
+  name: logic-operator-rhel8.v1.32.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -707,7 +707,7 @@ spec:
                   valueFrom:
                     fieldRef:
                       fieldPath: metadata.namespace
-                image: registry.redhat.io/openshift-serverless-1-tech-preview/logic-rhel8-operator@sha256:33653cf4c48121a7a0d1e109c3fe93b8050f9deb80b6bb00425b62c77917a9ad
+                image: registry.redhat.io/openshift-serverless-1-tech-preview/logic-rhel8-operator@sha256:cdc81719192f2dfdf8a1d366cda54347462acba3425f48a61b29631f191284fa
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -799,4 +799,4 @@ spec:
   minKubeVersion: 1.23.0
   provider:
     name: Red Hat
-  version: 1.33.0
+  version: 1.32.0
