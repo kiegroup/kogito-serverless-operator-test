@@ -101,12 +101,12 @@ func (d DataIndexHandler) GetContainerName() string {
 }
 
 func (d DataIndexHandler) GetServiceImageName(persistenceName string) string {
-	// Fix for OSL 1.32 where we only have DI ephemeral image.
+	// Fix for OSL 1.32.x where we only have DI ephemeral image.
 	if persistenceName == "ephemeral" {
 		return "registry.redhat.io/openshift-serverless-1-tech-preview/logic-data-index-ephemeral-rhel8:" + version.OperatorVersion
 	}
-	// Since we don't have an upstream version so far, use TAG from the cut-off date - main-2024-02-09
-	var tag = "main-2024-02-09"
+	// Since we don't have an upstream version so far, use TAG from the cut-off date for latest 1.32.x release - main-2024-03-06
+	var tag = "main-2024-03-06"
 	var suffix = constants.ImageNameNightlySuffix
 	// returns "quay.io/kiegroup/kogito-data-index-<persistence_layer>:<tag>"
 	return fmt.Sprintf("%s-%s-%s:%s", constants.ImageNamePrefix, constants.DataIndexName, persistenceName+suffix, tag)
@@ -257,8 +257,8 @@ func (j JobServiceHandler) GetContainerName() string {
 }
 
 func (j JobServiceHandler) GetServiceImageName(persistenceName string) string {
-	// Use TAG from the cut-off date - main-2024-02-09 since we don't have prod version of Jobs Service
-	var tag = "main-2024-02-09"
+	// Since we don't have an upstream version so far, use TAG from the cut-off date for latest 1.32.x release - main-2024-03-06
+	var tag = "main-2024-03-06"
 	var suffix = constants.ImageNameNightlySuffix
 	// returns "quay.io/kiegroup/kogito-jobs-service-<persistece_layer>:<tag>"
 	return fmt.Sprintf("%s-%s-%s:%s", constants.ImageNamePrefix, constants.JobServiceName, persistenceName+suffix, tag)
