@@ -5,7 +5,7 @@
 # - use environment variables to overwrite this value (e.g export VERSION=0.0.2)
 VERSION ?= 1.33.0
 # TODO: UPDATE THIS TO THE OPERATOR 1.33.0 image SHA
-IMAGE_DIGEST ?= sha256:610db2ea1acf51638677d75d1b5c9cdfa1c80c8632fe3932600053e40e0504d6
+IMAGE_DIGEST ?= sha256:26b40ece2d755d64495aeeda49fd5c354c4f827e221c9875d282974ffd0299cb
 
 # CHANNELS define the bundle channels used in the bundle.
 # Add a new line here if you would like to change its default config. (E.g CHANNELS = "candidate,fast,stable")
