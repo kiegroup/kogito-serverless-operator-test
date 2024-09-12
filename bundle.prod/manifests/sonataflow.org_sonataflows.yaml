@@ -2105,8 +2105,11 @@ spec:
               persistence:
                 description: Persistence defines the database persistence configuration
                   for the workflow
-                maxProperties: 1
+                maxProperties: 2
                 properties:
+                  migrateDBOnStartUp:
+                    description: Whether to migrate database on service startup?
+                    type: boolean
                   postgresql:
                     description: Connect configured services to a postgresql database.
                     maxProperties: 2
@@ -9461,6 +9464,20 @@ spec:
                 description: The generation observed by the deployment controller.
                 format: int64
                 type: integer
+              platform:
+                description: Platform displays which platform is being used by this
+                  workflow
+                properties:
+                  name:
+                    description: Name of the SonataFlowPlatform
+                    type: string
+                  namespace:
+                    description: Namespace of the SonataFlowPlatform
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
               recoverFailureAttempts:
                 description: keeps track of how many failure recovers a given workflow
                   had so far
