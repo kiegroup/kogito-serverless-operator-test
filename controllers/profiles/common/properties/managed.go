@@ -188,7 +188,7 @@ func NewManagedPropertyHandler(workflow *operatorapi.SonataFlow, platform *opera
 }
 
 func setDevProfileProperties(props *properties.Properties) {
-	props.Set(fmt.Sprintf("%%dev.%s", constants.QuarkusDevUICorsEnabled), "false")
+	props.Set(constants.QuarkusDevUICorsEnabled, "false")
 }
 
 // ApplicationManagedProperties immutable default application properties that can be used with any workflow based on Quarkus.

@@ -470,7 +470,7 @@ func generateJobServiceWorkflowDevProperties() *properties.Properties {
 	props.Set("kogito.events.processdefinitions.enabled", "false")
 	props.Set("kogito.events.processinstances.enabled", "false")
 	props.Set("kogito.events.usertasks.enabled", "false")
-	props.Set("%dev.quarkus.dev-ui.cors.enabled", "false")
+	props.Set("quarkus.dev-ui.cors.enabled", "false")
 	props.Sort()
 	return props
 }
@@ -523,7 +523,7 @@ func generateDataIndexWorkflowDevProperties() *properties.Properties {
 	props.Set("kogito.events.processdefinitions.enabled", "false")
 	props.Set("kogito.events.processinstances.enabled", "false")
 	props.Set("kogito.events.usertasks.enabled", "false")
-	props.Set("%dev.quarkus.dev-ui.cors.enabled", "false")
+	props.Set("quarkus.dev-ui.cors.enabled", "false")
 	props.Sort()
 	return props
 }
@@ -581,7 +581,7 @@ func generateDataIndexAndJobServiceWorkflowDevProperties() *properties.Propertie
 	props.Set("kogito.events.processdefinitions.enabled", "false")
 	props.Set("kogito.events.processinstances.enabled", "false")
 	props.Set("kogito.events.usertasks.enabled", "false")
-	props.Set("%dev.quarkus.dev-ui.cors.enabled", "false")
+	props.Set("quarkus.dev-ui.cors.enabled", "false")
 	props.Sort()
 	return props
 }
