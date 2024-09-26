@@ -24,4 +24,6 @@ const (
 	KnativeInjectedEnvVar                    = "${K_SINK}"
 	KnativeEventingBrokerDefault             = "default"
 	QuarkusDevUICorsEnabled                  = "quarkus.dev-ui.cors.enabled"
+	QuarkusHttpCors                          = "quarkus.http.cors"
+	QuarkusHttpCorsOrigins                   = "quarkus.http.cors.origins"
 )

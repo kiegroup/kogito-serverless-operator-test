@@ -74,6 +74,15 @@ func (e *ensureRunningWorkflowState) Do(ctx context.Context, workflow *operatora
 	if err != nil {
 		return ctrl.Result{Requeue: false}, objs, err
 	}
+
+	// Create the OpenShift route before starting the WF deployment.
+	// Non OpenShift deployments executes no-ops.
+	route, _, err := e.ensurers.network.Ensure(ctx, workflow)
+	if err != nil {
+		return ctrl.Result{RequeueAfter: constants.RequeueAfterFailure}, objs, err
+	}
+	objs = append(objs, route)
+
 	if pl != nil && len(pl.Spec.DevMode.BaseImage) > 0 {
 		devBaseContainerImage = pl.Spec.DevMode.BaseImage
 	}
@@ -110,12 +119,6 @@ func (e *ensureRunningWorkflowState) Do(ctx context.Context, workflow *operatora
 		return ctrl.Result{RequeueAfter: constants.RequeueAfterFailure}, objs, err
 	}
 	objs = append(objs, service)
-
-	route, _, err := e.ensurers.network.Ensure(ctx, workflow)
-	if err != nil {
-		return ctrl.Result{RequeueAfter: constants.RequeueAfterFailure}, objs, err
-	}
-	objs = append(objs, route)
 
 	if knativeObjs, err := common.NewKnativeEventingHandler(e.StateSupport).Ensure(ctx, workflow); err != nil {
 		return ctrl.Result{RequeueAfter: constants.RequeueAfterFailure}, objs, err
