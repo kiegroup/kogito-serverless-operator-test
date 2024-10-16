@@ -893,4 +893,5 @@ spec:
   minKubeVersion: 1.23.0
   provider:
     name: Red Hat
+  replaces: logic-operator-rhel8.v1.33.0
   version: 1.34.0
