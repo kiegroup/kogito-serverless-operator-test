@@ -49,6 +49,7 @@
       - path: modules
     install:
       - name: com.redhat.osl.cli.artifacts
+      - name: com.redhat.osl.pkg-update
   run:
     user: 65532
 
